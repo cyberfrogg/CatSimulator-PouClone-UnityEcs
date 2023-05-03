@@ -1,3 +1,5 @@
+using Db.Cat;
+using Db.Cat.Impl;
 using Db.Fx;
 using Db.Fx.Impl;
 using Db.Objects;
@@ -16,12 +18,15 @@ namespace Installers.Game
         [SerializeField] private PrefabsBase prefabsBase;
         [SerializeField] private ObjectBase objectBase;
         [SerializeField] private FxObjectBase fxObjectBase;
+        [Header("Cat:")]
+        [SerializeField] private CatInteractionParametersBase catInteractionParametersBase;
         
         public override void InstallBindings()
         {
             Container.Bind<IPrefabsBase>().FromSubstitute(prefabsBase).AsSingle();
             Container.Bind<IObjectBase>().FromSubstitute(objectBase).AsSingle();
             Container.Bind<IFxObjectBase>().FromSubstitute(fxObjectBase).AsSingle();
+            Container.Bind<ICatInteractionParametersBase>().FromSubstitute(catInteractionParametersBase).AsSingle();
         }
     }
 }

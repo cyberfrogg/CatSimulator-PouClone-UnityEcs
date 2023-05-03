@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selectedAppIndex: 0
   clientTokens:
-  - ee6d6cc4e64b724d01fbf75dc8f7aecb
+  - unityproject
   appIds:
-  - 1892446347630534
+  - unityproject
   appLabels:
-  - Throw Bow Master
+  - unityproject
   cookie: 1
   logging: 1
   status: 1
