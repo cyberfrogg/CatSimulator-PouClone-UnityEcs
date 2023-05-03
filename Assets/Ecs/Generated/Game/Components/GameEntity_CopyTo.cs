@@ -26,6 +26,10 @@ public partial class GameEntity
 		{
 			CopyObjectTypeTo(ObjectType);
 		}
+		else if (component is Ecs.Game.Components.MoodComponent Mood)
+		{
+			CopyMoodTo(Mood);
+		}
 		else if (component is Ecs.Game.Components.InstantiateComponent Instantiate)
 		{
 			IsInstantiate = true;
