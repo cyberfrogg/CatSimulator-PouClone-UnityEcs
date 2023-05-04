@@ -15,14 +15,16 @@ public static class ActionComponentsLookup
 {
 	public const int ActionDestroyedAddedListener = 0;
 	public const int InteractWithCat = 1;
-	public const int Destroyed = 2;
+	public const int ResetCatInteraction = 2;
+	public const int Destroyed = 3;
 
-	public const int TotalComponents = 3;
+	public const int TotalComponents = 4;
 
 	public static readonly string[] ComponentNames =
 	{
 		"ActionDestroyedAddedListener",
 		"InteractWithCat",
+		"ResetCatInteraction",
 		"Destroyed"
 	};
 
@@ -30,6 +32,7 @@ public static class ActionComponentsLookup
 	{
 		typeof(ActionDestroyedAddedListenerComponent),
 		typeof(Ecs.Action.Components.InteractWithCatComponent),
+		typeof(Ecs.Action.Components.ResetCatInteractionComponent),
 		typeof(Ecs.Common.Components.DestroyedComponent)
 	};
 
@@ -37,7 +40,8 @@ public static class ActionComponentsLookup
 	{
 		{ typeof(ActionDestroyedAddedListenerComponent), 0 },
 		{ typeof(Ecs.Action.Components.InteractWithCatComponent), 1 },
-		{ typeof(Ecs.Common.Components.DestroyedComponent), 2 }
+		{ typeof(Ecs.Action.Components.ResetCatInteractionComponent), 2 },
+		{ typeof(Ecs.Common.Components.DestroyedComponent), 3 }
 	};
 
 	/// <summary>
