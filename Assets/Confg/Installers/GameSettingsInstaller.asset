@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9dc09305c4e54f60b9bb217a9867d631, type: 3}
   m_Name: GameSettingsInstaller
   m_EditorClassIdentifier: 
-  enemySettingsBase: {fileID: 11400000, guid: 80ce71ad6bfa3474981521a65fe4b6ec, type: 2}
-  playerGameParametersBase: {fileID: 11400000, guid: 282009360b46d466783bfb15114424ce, type: 2}
   prefabsBase: {fileID: 11400000, guid: edc274d0f36de4d969733574248f4b14, type: 2}
   objectBase: {fileID: 11400000, guid: 3633a91c368d140b4bdd2c2438909b51, type: 2}
   fxObjectBase: {fileID: 11400000, guid: 5d4c704d0c3a944dc8d391d915744bf0, type: 2}
+  catParametersBase: {fileID: 11400000, guid: 21fa7d5c69e36cfbaa4fe92422664071, type: 2}
+  catInteractionParametersBase: {fileID: 11400000, guid: 7fe3e74db06f89b63b1441f4afdaaa31, type: 2}

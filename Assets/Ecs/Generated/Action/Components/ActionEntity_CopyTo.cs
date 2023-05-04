@@ -22,6 +22,14 @@ public partial class ActionEntity
 		{
 			IsDestroyed = true;
 		}
+		else if (component is Ecs.Action.Components.ResetCatInteractionComponent ResetCatInteraction)
+		{
+			IsResetCatInteraction = true;
+		}
+		else if (component is Ecs.Action.Components.InteractWithCatComponent InteractWithCat)
+		{
+			CopyInteractWithCatTo(InteractWithCat);
+		}
 		else if (component is ActionDestroyedAddedListenerComponent ActionDestroyedAddedListener)
 		{
 			CopyActionDestroyedAddedListenerTo(ActionDestroyedAddedListener);
