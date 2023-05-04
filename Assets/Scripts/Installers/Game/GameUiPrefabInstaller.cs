@@ -1,3 +1,4 @@
+using Game.Ui.Mood;
 using Game.Ui.PerformAction;
 using SimpleUi;
 using UnityEngine;
@@ -12,6 +13,7 @@ namespace Installers.Game
         [SerializeField] private Canvas canvas;
 
         [SerializeField] private PerformActionView performActionView;
+        [SerializeField] private CatMoodView catMoodView;
          
         public override void InstallBindings()
         {
@@ -21,7 +23,7 @@ namespace Installers.Game
             var camera = canvasTransform.GetComponentInChildren<Camera>();
             
             Container.BindUiView<PerformActionController, PerformActionView>(performActionView, canvasTransform);
-
+            Container.BindUiView<CatMoodController, CatMoodView>(catMoodView, canvasTransform);
         }
     }
 }

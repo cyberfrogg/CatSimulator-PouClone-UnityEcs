@@ -12,7 +12,7 @@ public partial interface IMoodEntity
 	Ecs.Game.Components.MoodComponent Mood { get; }
 	bool HasMood { get; }
 
-	void AddMood(Game.Utils.EMood newValue);
-	void ReplaceMood(Game.Utils.EMood newValue);
+	void AddMood(float newValue);
+	void ReplaceMood(float newValue);
 	void RemoveMood();
 }

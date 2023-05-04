@@ -26,13 +26,9 @@ public partial class GameEntity
 		{
 			CopyObjectTypeTo(ObjectType);
 		}
-		else if (component is Ecs.Game.Components.MoodComponent Mood)
+		else if (component is Ecs.Game.Components.MoodTypeComponent MoodType)
 		{
-			CopyMoodTo(Mood);
-		}
-		else if (component is Ecs.Game.Components.InstantiateComponent Instantiate)
-		{
-			IsInstantiate = true;
+			CopyMoodTypeTo(MoodType);
 		}
 		else if (component is Ecs.Game.Components.LookDirectionComponent LookDirection)
 		{
@@ -46,6 +42,14 @@ public partial class GameEntity
 		{
 			CopyUidTo(Uid);
 		}
+		else if (component is Ecs.Game.Components.MoodComponent Mood)
+		{
+			CopyMoodTo(Mood);
+		}
+		else if (component is Ecs.Game.Components.CharacterComponent Character)
+		{
+			IsCharacter = true;
+		}
 		else if (component is Ecs.Game.Components.VelocityComponent Velocity)
 		{
 			CopyVelocityTo(Velocity);
@@ -54,9 +58,17 @@ public partial class GameEntity
 		{
 			IsCamera = true;
 		}
+		else if (component is Ecs.Game.Components.PlayerComponent Player)
+		{
+			IsPlayer = true;
+		}
 		else if (component is Ecs.Game.Components.TransformComponent Transform)
 		{
 			CopyTransformTo(Transform);
+		}
+		else if (component is Ecs.Game.Components.CatComponent Cat)
+		{
+			IsCat = true;
 		}
 		else if (component is Ecs.Game.Components.PrefabComponent Prefab)
 		{
@@ -78,6 +90,14 @@ public partial class GameEntity
 		{
 			CopyCountTo(Count);
 		}
+		else if (component is Ecs.Game.Components.CatInteractionTypeComponent CatInteractionType)
+		{
+			CopyCatInteractionTypeTo(CatInteractionType);
+		}
+		else if (component is Ecs.Game.Components.InstantiateComponent Instantiate)
+		{
+			IsInstantiate = true;
+		}
 		else if (component is Ecs.Game.Components.LookPointComponent LookPoint)
 		{
 			CopyLookPointTo(LookPoint);
@@ -90,9 +110,17 @@ public partial class GameEntity
 		{
 			CopyObjectTypeAddedListenerTo(ObjectTypeAddedListener);
 		}
+		else if (component is MoodTypeAddedListenerComponent MoodTypeAddedListener)
+		{
+			CopyMoodTypeAddedListenerTo(MoodTypeAddedListener);
+		}
 		else if (component is PositionAddedListenerComponent PositionAddedListener)
 		{
 			CopyPositionAddedListenerTo(PositionAddedListener);
+		}
+		else if (component is MoodAddedListenerComponent MoodAddedListener)
+		{
+			CopyMoodAddedListenerTo(MoodAddedListener);
 		}
 		else if (component is VelocityAddedListenerComponent VelocityAddedListener)
 		{
@@ -117,6 +145,10 @@ public partial class GameEntity
 		else if (component is CountRemovedListenerComponent CountRemovedListener)
 		{
 			CopyCountRemovedListenerTo(CountRemovedListener);
+		}
+		else if (component is CatInteractionTypeAddedListenerComponent CatInteractionTypeAddedListener)
+		{
+			CopyCatInteractionTypeAddedListenerTo(CatInteractionTypeAddedListener);
 		}
 		#endif
 	}

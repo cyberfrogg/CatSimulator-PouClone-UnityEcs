@@ -14,26 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _interactions:
   - InteractionType: 1
-    Mood: 0
+    MoodAddValue: 0.1
   - InteractionType: 2
-    Mood: 0
+    MoodAddValue: 0.3
   - InteractionType: 3
-    Mood: 0
+    MoodAddValue: 0.2
   - InteractionType: 4
-    Mood: 0
-  - InteractionType: 1
-    Mood: 1
-  - InteractionType: 2
-    Mood: 1
-  - InteractionType: 3
-    Mood: 1
-  - InteractionType: 4
-    Mood: 1
-  - InteractionType: 1
-    Mood: 2
-  - InteractionType: 2
-    Mood: 2
-  - InteractionType: 3
-    Mood: 2
-  - InteractionType: 4
-    Mood: 2
+    MoodAddValue: -0.4

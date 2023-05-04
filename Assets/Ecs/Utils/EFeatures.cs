@@ -5,6 +5,7 @@ namespace Ecs.Utils
 		Initialization,
 		Common,
 		Camera,
-		Scheduler
+		Scheduler,
+		Cat
 	}
 }

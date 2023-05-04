@@ -13,14 +13,17 @@ namespace Ecs.Game.Systems.Initialize
 	public class GameInitializeSystem : IInitializeSystem
 	{
 		private readonly SignalBus _signalBus;
+		private readonly SignalContext _signal;
 		private readonly GameContext _game;
 
 		protected GameInitializeSystem(
 			SignalBus signalBus,
+			SignalContext signal,
 			GameContext game
 		)
 		{
 			_signalBus = signalBus;
+			_signal = signal;
 			_game = game;
 		}
 
@@ -28,7 +31,9 @@ namespace Ecs.Game.Systems.Initialize
 		{
 			Debug.Log("GameInitializeSystem");
 
+			_signal.CreateEntity().IsSignalStart = true;
 			_signalBus.OpenWindow<GameHudWindow>();
+			
 		}
 	}
 }

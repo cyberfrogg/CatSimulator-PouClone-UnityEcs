@@ -19,6 +19,7 @@ namespace Installers.Game
         [SerializeField] private ObjectBase objectBase;
         [SerializeField] private FxObjectBase fxObjectBase;
         [Header("Cat:")]
+        [SerializeField] private CatParametersBase catParametersBase;
         [SerializeField] private CatInteractionParametersBase catInteractionParametersBase;
         
         public override void InstallBindings()
@@ -26,6 +27,8 @@ namespace Installers.Game
             Container.Bind<IPrefabsBase>().FromSubstitute(prefabsBase).AsSingle();
             Container.Bind<IObjectBase>().FromSubstitute(objectBase).AsSingle();
             Container.Bind<IFxObjectBase>().FromSubstitute(fxObjectBase).AsSingle();
+            
+            Container.Bind<ICatParametersBase>().FromSubstitute(catParametersBase).AsSingle();
             Container.Bind<ICatInteractionParametersBase>().FromSubstitute(catInteractionParametersBase).AsSingle();
         }
     }

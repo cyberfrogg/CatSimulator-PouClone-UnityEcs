@@ -1,3 +1,4 @@
+using Game.Ui.Mood;
 using Game.Ui.PerformAction;
 using SimpleUi;
 
@@ -10,6 +11,7 @@ namespace Game.Ui
         protected override void AddControllers()
         {
             AddController<PerformActionController>();
+            AddController<CatMoodController>();
         }
     }
 }

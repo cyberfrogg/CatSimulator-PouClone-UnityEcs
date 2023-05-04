@@ -1087,13 +1087,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f45c7acb71f42c7bf100dc91f169e5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Buttons:
+  buttons:
+  - CatInteractionType: 3
+    Button: {fileID: 7807665412310863085}
   - CatInteractionType: 1
     Button: {fileID: 7807665410861023875}
   - CatInteractionType: 2
     Button: {fileID: 7807665410997455183}
-  - CatInteractionType: 3
-    Button: {fileID: 7807665412310863085}
   - CatInteractionType: 4
     Button: {fileID: 7807665411860223333}
 --- !u!1 &8685897150089395685

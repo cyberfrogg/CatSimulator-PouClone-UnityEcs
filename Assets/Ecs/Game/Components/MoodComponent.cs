@@ -1,11 +1,11 @@
-using Game.Utils;
 using JCMG.EntitasRedux;
 
 namespace Ecs.Game.Components
 {
     [Game]
+    [Event(EventTarget.Self)]
     public class MoodComponent : IComponent
     {
-        public EMood Value;
+        public float Value;
     }
 }
