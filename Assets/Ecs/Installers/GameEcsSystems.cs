@@ -1,3 +1,4 @@
+using Ecs.Action.Systems;
 using Ecs.Core;
 using Ecs.Game.Systems;
 using Ecs.Game.Systems.Camera;
@@ -42,9 +43,22 @@ namespace Ecs.Installers {
 
 		private static void Normal(DiContainer container, bool isDebug) {
  
+			// Initialization 0020
+			SystemInstallHelper.Install<CatInitializeSystem>(container);	// 0020 Initialization
+			SystemInstallHelper.Install<PlayerInitializeSystem>(container);	// 0030 Initialization
+
+			// Common 0300
+			SystemInstallHelper.Install<MoodTypeSystem>(container);	// 0300 Common
+
+			// Cat 0605
+			SystemInstallHelper.Install<InteractWithCatBaseSystem>(container);	// 0605 Cat
+
 			// Initialization 0700
 			SystemInstallHelper.Install<InstantiateSystem>(container);	// 0700 Initialization
 			SystemInstallHelper.Install<CameraTargetInitializeSystem>(container);	// 0705 Camera
+
+			// Cat 1800
+			SystemInstallHelper.Install<InteractWithCatDestroySystem>(container);	// 1800 Cat
 
 			// Scheduler 1970
 			SystemInstallHelper.Install<ExecuteScheduledActionSystem>(container);	// 1970 Scheduler

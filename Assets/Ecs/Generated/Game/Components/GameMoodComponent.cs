@@ -12,7 +12,7 @@ public partial class GameEntity
 	public Ecs.Game.Components.MoodComponent Mood { get { return (Ecs.Game.Components.MoodComponent)GetComponent(GameComponentsLookup.Mood); } }
 	public bool HasMood { get { return HasComponent(GameComponentsLookup.Mood); } }
 
-	public void AddMood(Game.Utils.EMood newValue)
+	public void AddMood(float newValue)
 	{
 		var index = GameComponentsLookup.Mood;
 		var component = (Ecs.Game.Components.MoodComponent)CreateComponent(index, typeof(Ecs.Game.Components.MoodComponent));
@@ -22,7 +22,7 @@ public partial class GameEntity
 		AddComponent(index, component);
 	}
 
-	public void ReplaceMood(Game.Utils.EMood newValue)
+	public void ReplaceMood(float newValue)
 	{
 		var index = GameComponentsLookup.Mood;
 		var component = (Ecs.Game.Components.MoodComponent)CreateComponent(index, typeof(Ecs.Game.Components.MoodComponent));

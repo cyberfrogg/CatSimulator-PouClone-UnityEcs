@@ -1,5 +1,6 @@
 using System;
 using Game.Utils;
+using UnityEngine;
 
 namespace Db.Cat
 {
@@ -7,6 +8,6 @@ namespace Db.Cat
     public struct CatInteractionVo
     {
         public ECatInteractionType InteractionType;
-        public EMood Mood;
+        [Tooltip("Adds or decreases mood:")] public float MoodAddValue;
     }
 }

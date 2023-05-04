@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canvas: {fileID: 223224693220343330, guid: 319a2f54ade3772468c5e0fe99627021, type: 3}
   performActionView: {fileID: 6963311246586343373, guid: 07852bab07bfd336786f410d4761b175, type: 3}
+  catMoodView: {fileID: 8488423358020996019, guid: b19fba4dd401acadb80fc972434db4bc, type: 3}

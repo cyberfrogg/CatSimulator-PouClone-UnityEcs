@@ -10,7 +10,11 @@ namespace Game.Ui.PerformAction
 {
     public class PerformActionView : UiView
     {
-        [KeyValueFormat(nameof(PerformActionViewButtonsPair.CatInteractionType))] [SerializeField] private List<PerformActionViewButtonsPair> Buttons;
+        [KeyValueFormat(nameof(PerformActionViewButtonsPair.CatInteractionType))] 
+        [SerializeField] 
+        private List<PerformActionViewButtonsPair> buttons;
+
+        public List<PerformActionViewButtonsPair> Buttons => buttons;
     }
 
     [Serializable]

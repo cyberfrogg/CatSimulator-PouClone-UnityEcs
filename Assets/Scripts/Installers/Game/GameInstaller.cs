@@ -1,5 +1,6 @@
 using Ecs.Utils.Impl;
 using Game.Models.Camera.Impl;
+using Game.Services.Mood.Impl;
 using Game.Services.Pool.Impls;
 using Game.Signals;
 using Game.Ui;
@@ -55,6 +56,8 @@ namespace Installers.Game
 	        Container.BindInterfacesTo<SpawnService>().AsSingle();
 	        Container.BindInterfacesTo<LinkedEntityRepository>().AsSingle();
 	        Container.BindInterfacesTo<PrefabPoolService>().AsSingle();
+	        
+	        Container.BindInterfacesTo<MoodService>().AsSingle();
         }
     }
 }
