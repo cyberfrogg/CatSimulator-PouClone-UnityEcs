@@ -8,4 +8,4 @@ Test Task Project.
 
 ## Screenshots
 
-![Screenshot 1](https://raw.githubusercontent.com/cyberfrogg/CatSimulator-PouClone-UnityEcs/feature/mainfeature/Screenshots/screenshot_1.png)
+![Screenshot 1](https://cyberfrogg.com/cdn/github/CatSimulator-PouClone-UnityEcs/screenshot_1.png)
