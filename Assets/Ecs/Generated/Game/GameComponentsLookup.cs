@@ -13,46 +13,62 @@ using JCMG.EntitasRedux;
 
 public static class GameComponentsLookup
 {
-	public const int CountAddedListener = 0;
-	public const int CountRemovedListener = 1;
-	public const int Destroyed = 2;
-	public const int ObjectType = 3;
-	public const int Camera = 4;
-	public const int Count = 5;
-	public const int Instantiate = 6;
-	public const int Link = 7;
-	public const int LocalPosition = 8;
-	public const int LookDirection = 9;
-	public const int LookPoint = 10;
-	public const int Position = 11;
-	public const int Prefab = 12;
-	public const int Rotation = 13;
-	public const int Transform = 14;
-	public const int Uid = 15;
-	public const int Velocity = 16;
-	public const int GameDestroyedAddedListener = 17;
-	public const int LinkRemovedListener = 18;
-	public const int LocalPositionAddedListener = 19;
-	public const int ObjectTypeAddedListener = 20;
-	public const int PositionAddedListener = 21;
-	public const int RotationAddedListener = 22;
-	public const int VelocityAddedListener = 23;
+	public const int CatInteractionTypeAddedListener = 0;
+	public const int CountAddedListener = 1;
+	public const int CountRemovedListener = 2;
+	public const int Destroyed = 3;
+	public const int ObjectType = 4;
+	public const int Camera = 5;
+	public const int Cat = 6;
+	public const int CatInteractionType = 7;
+	public const int Character = 8;
+	public const int Count = 9;
+	public const int Instantiate = 10;
+	public const int Link = 11;
+	public const int LocalPosition = 12;
+	public const int LookDirection = 13;
+	public const int LookPoint = 14;
+	public const int Mood = 15;
+	public const int MoodType = 16;
+	public const int Player = 17;
+	public const int Position = 18;
+	public const int Prefab = 19;
+	public const int Rotation = 20;
+	public const int Transform = 21;
+	public const int Uid = 22;
+	public const int Velocity = 23;
+	public const int GameDestroyedAddedListener = 24;
+	public const int LinkRemovedListener = 25;
+	public const int LocalPositionAddedListener = 26;
+	public const int MoodAddedListener = 27;
+	public const int MoodTypeAddedListener = 28;
+	public const int ObjectTypeAddedListener = 29;
+	public const int PositionAddedListener = 30;
+	public const int RotationAddedListener = 31;
+	public const int VelocityAddedListener = 32;
 
-	public const int TotalComponents = 24;
+	public const int TotalComponents = 33;
 
 	public static readonly string[] ComponentNames =
 	{
+		"CatInteractionTypeAddedListener",
 		"CountAddedListener",
 		"CountRemovedListener",
 		"Destroyed",
 		"ObjectType",
 		"Camera",
+		"Cat",
+		"CatInteractionType",
+		"Character",
 		"Count",
 		"Instantiate",
 		"Link",
 		"LocalPosition",
 		"LookDirection",
 		"LookPoint",
+		"Mood",
+		"MoodType",
+		"Player",
 		"Position",
 		"Prefab",
 		"Rotation",
@@ -62,6 +78,8 @@ public static class GameComponentsLookup
 		"GameDestroyedAddedListener",
 		"LinkRemovedListener",
 		"LocalPositionAddedListener",
+		"MoodAddedListener",
+		"MoodTypeAddedListener",
 		"ObjectTypeAddedListener",
 		"PositionAddedListener",
 		"RotationAddedListener",
@@ -70,17 +88,24 @@ public static class GameComponentsLookup
 
 	public static readonly System.Type[] ComponentTypes =
 	{
+		typeof(CatInteractionTypeAddedListenerComponent),
 		typeof(CountAddedListenerComponent),
 		typeof(CountRemovedListenerComponent),
 		typeof(Ecs.Common.Components.DestroyedComponent),
 		typeof(Ecs.Common.Components.ObjectTypeComponent),
 		typeof(Ecs.Game.Components.CameraComponent),
+		typeof(Ecs.Game.Components.CatComponent),
+		typeof(Ecs.Game.Components.CatInteractionTypeComponent),
+		typeof(Ecs.Game.Components.CharacterComponent),
 		typeof(Ecs.Game.Components.CountComponent),
 		typeof(Ecs.Game.Components.InstantiateComponent),
 		typeof(Ecs.Game.Components.LinkComponent),
 		typeof(Ecs.Game.Components.LocalPositionComponent),
 		typeof(Ecs.Game.Components.LookDirectionComponent),
 		typeof(Ecs.Game.Components.LookPointComponent),
+		typeof(Ecs.Game.Components.MoodComponent),
+		typeof(Ecs.Game.Components.MoodTypeComponent),
+		typeof(Ecs.Game.Components.PlayerComponent),
 		typeof(Ecs.Game.Components.PositionComponent),
 		typeof(Ecs.Game.Components.PrefabComponent),
 		typeof(Ecs.Game.Components.RotationComponent),
@@ -90,6 +115,8 @@ public static class GameComponentsLookup
 		typeof(GameDestroyedAddedListenerComponent),
 		typeof(LinkRemovedListenerComponent),
 		typeof(LocalPositionAddedListenerComponent),
+		typeof(MoodAddedListenerComponent),
+		typeof(MoodTypeAddedListenerComponent),
 		typeof(ObjectTypeAddedListenerComponent),
 		typeof(PositionAddedListenerComponent),
 		typeof(RotationAddedListenerComponent),
@@ -98,30 +125,39 @@ public static class GameComponentsLookup
 
 	public static readonly Dictionary<Type, int> ComponentTypeToIndex = new Dictionary<Type, int>
 	{
-		{ typeof(CountAddedListenerComponent), 0 },
-		{ typeof(CountRemovedListenerComponent), 1 },
-		{ typeof(Ecs.Common.Components.DestroyedComponent), 2 },
-		{ typeof(Ecs.Common.Components.ObjectTypeComponent), 3 },
-		{ typeof(Ecs.Game.Components.CameraComponent), 4 },
-		{ typeof(Ecs.Game.Components.CountComponent), 5 },
-		{ typeof(Ecs.Game.Components.InstantiateComponent), 6 },
-		{ typeof(Ecs.Game.Components.LinkComponent), 7 },
-		{ typeof(Ecs.Game.Components.LocalPositionComponent), 8 },
-		{ typeof(Ecs.Game.Components.LookDirectionComponent), 9 },
-		{ typeof(Ecs.Game.Components.LookPointComponent), 10 },
-		{ typeof(Ecs.Game.Components.PositionComponent), 11 },
-		{ typeof(Ecs.Game.Components.PrefabComponent), 12 },
-		{ typeof(Ecs.Game.Components.RotationComponent), 13 },
-		{ typeof(Ecs.Game.Components.TransformComponent), 14 },
-		{ typeof(Ecs.Game.Components.UidComponent), 15 },
-		{ typeof(Ecs.Game.Components.VelocityComponent), 16 },
-		{ typeof(GameDestroyedAddedListenerComponent), 17 },
-		{ typeof(LinkRemovedListenerComponent), 18 },
-		{ typeof(LocalPositionAddedListenerComponent), 19 },
-		{ typeof(ObjectTypeAddedListenerComponent), 20 },
-		{ typeof(PositionAddedListenerComponent), 21 },
-		{ typeof(RotationAddedListenerComponent), 22 },
-		{ typeof(VelocityAddedListenerComponent), 23 }
+		{ typeof(CatInteractionTypeAddedListenerComponent), 0 },
+		{ typeof(CountAddedListenerComponent), 1 },
+		{ typeof(CountRemovedListenerComponent), 2 },
+		{ typeof(Ecs.Common.Components.DestroyedComponent), 3 },
+		{ typeof(Ecs.Common.Components.ObjectTypeComponent), 4 },
+		{ typeof(Ecs.Game.Components.CameraComponent), 5 },
+		{ typeof(Ecs.Game.Components.CatComponent), 6 },
+		{ typeof(Ecs.Game.Components.CatInteractionTypeComponent), 7 },
+		{ typeof(Ecs.Game.Components.CharacterComponent), 8 },
+		{ typeof(Ecs.Game.Components.CountComponent), 9 },
+		{ typeof(Ecs.Game.Components.InstantiateComponent), 10 },
+		{ typeof(Ecs.Game.Components.LinkComponent), 11 },
+		{ typeof(Ecs.Game.Components.LocalPositionComponent), 12 },
+		{ typeof(Ecs.Game.Components.LookDirectionComponent), 13 },
+		{ typeof(Ecs.Game.Components.LookPointComponent), 14 },
+		{ typeof(Ecs.Game.Components.MoodComponent), 15 },
+		{ typeof(Ecs.Game.Components.MoodTypeComponent), 16 },
+		{ typeof(Ecs.Game.Components.PlayerComponent), 17 },
+		{ typeof(Ecs.Game.Components.PositionComponent), 18 },
+		{ typeof(Ecs.Game.Components.PrefabComponent), 19 },
+		{ typeof(Ecs.Game.Components.RotationComponent), 20 },
+		{ typeof(Ecs.Game.Components.TransformComponent), 21 },
+		{ typeof(Ecs.Game.Components.UidComponent), 22 },
+		{ typeof(Ecs.Game.Components.VelocityComponent), 23 },
+		{ typeof(GameDestroyedAddedListenerComponent), 24 },
+		{ typeof(LinkRemovedListenerComponent), 25 },
+		{ typeof(LocalPositionAddedListenerComponent), 26 },
+		{ typeof(MoodAddedListenerComponent), 27 },
+		{ typeof(MoodTypeAddedListenerComponent), 28 },
+		{ typeof(ObjectTypeAddedListenerComponent), 29 },
+		{ typeof(PositionAddedListenerComponent), 30 },
+		{ typeof(RotationAddedListenerComponent), 31 },
+		{ typeof(VelocityAddedListenerComponent), 32 }
 	};
 
 	/// <summary>
