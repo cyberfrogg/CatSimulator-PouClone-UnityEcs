@@ -57,6 +57,9 @@ namespace Ecs.Installers {
 			SystemInstallHelper.Install<InstantiateSystem>(container);	// 0700 Initialization
 			SystemInstallHelper.Install<CameraTargetInitializeSystem>(container);	// 0705 Camera
 
+			// Cat 0800
+			SystemInstallHelper.Install<ResetCatInteractionSystem>(container);	// 0800 Cat
+
 			// Cat 1800
 			SystemInstallHelper.Install<InteractWithCatDestroySystem>(container);	// 1800 Cat
 

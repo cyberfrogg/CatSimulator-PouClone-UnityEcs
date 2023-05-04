@@ -40,6 +40,9 @@ namespace Ecs.Views.Linkable.Impl
                 return;
             }
             
+            if(value == ECatInteractionType.None)
+                return;
+            
             _animator.SetTrigger(AnimationKeys.Interact);
             _animator.SetInteger(AnimationKeys.InteractionType, (int)value);
         }

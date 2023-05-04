@@ -4,6 +4,7 @@ using Game.Providers;
 using InstallerGenerator.Attributes;
 using InstallerGenerator.Enums;
 using JCMG.EntitasRedux;
+using Zenject;
 
 namespace Ecs.Game.Systems.Initialize
 {
@@ -11,16 +12,19 @@ namespace Ecs.Game.Systems.Initialize
     public class PlayerInitializeSystem : IInitializeSystem
     {
         private readonly GameContext _game;
+        private readonly DiContainer _diContainer;
         private readonly IGameFieldProvider _gameFieldProvider;
         private readonly ILinkedEntityRepository _linkedEntityRepository;
 
         public PlayerInitializeSystem(
             GameContext game,
+            DiContainer diContainer,
             IGameFieldProvider gameFieldProvider,
             ILinkedEntityRepository linkedEntityRepository
         )
         {
             _game = game;
+            _diContainer = diContainer;
             _gameFieldProvider = gameFieldProvider;
             _linkedEntityRepository = linkedEntityRepository;
         }
@@ -28,6 +32,7 @@ namespace Ecs.Game.Systems.Initialize
         public void Initialize()
         {
             var characterView = _gameFieldProvider.GameField.CharacterView;
+            _diContainer.Inject(characterView);
             var characterViewTransform = characterView.transform;
             var cat = _game.CreatePlayer(characterViewTransform.position, characterViewTransform.rotation);
             
