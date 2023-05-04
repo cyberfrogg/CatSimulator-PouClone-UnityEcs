@@ -8,4 +8,4 @@ Test Task Project.
 
 ## Screenshots
 
-![Screenshot 1](/Screenshots/screenshot_1.jpg?raw=true)
+![Screenshot 1](https://raw.githubusercontent.com/cyberfrogg/CatSimulator-PouClone-UnityEcs/feature/mainfeature/Screenshots/screenshot_1.png)
