@@ -12,34 +12,8 @@ namespace Game.Models.Camera.Impl
 		private UnityEngine.Camera _camera;
 		private Transform _projectilePlace;
 		private CinemachineBrain _brain;
-		private CinemachineVirtualCamera _thirdPersonCamera;
-		private CinemachineVirtualCamera _firstPersonCamera;
+		private CinemachineVirtualCamera _baseCamera;
 
-		public float TargetHeight
-		{
-			get
-			{
-				if (_follow == null)
-				{
-					Debug.LogError($"[{nameof(PlayerCameraHolder)}] Camera holder isn't initialized");
-					return 0;
-				}
-
-				return _follow.localPosition.y;
-			}
-			set
-			{
-				if (_follow == null)
-				{
-					Debug.LogError($"[{nameof(PlayerCameraHolder)}] Camera holder isn't initialized");
-					return;
-				}
-
-				var lookPos = _follow.localPosition;
-				lookPos.y = value;
-				_follow.localPosition = lookPos;
-			}
-		}
 
 		public Transform LookAt
 		{
@@ -66,58 +40,40 @@ namespace Game.Models.Camera.Impl
 			_camera.enabled = enabled;
 		}
 
-		public void SetFirstPerson(bool firstPerson)
-		{
-			_firstPersonCamera.enabled = firstPerson;
-			_thirdPersonCamera.enabled = !firstPerson;
-		}
-
 		public T GetLiveCameraComponent<T>(CinemachineCore.Stage stage)
 			where T : CinemachineComponentBase
 		{
-			var camera = _thirdPersonCamera.enabled ? _thirdPersonCamera : _firstPersonCamera;
+			var camera = _baseCamera;
 			return camera.GetCinemachineComponent(stage) as T;
 		}
 
-		public void Init(CinemachineVirtualCamera thirdPersonCamera, CinemachineVirtualCamera firstPersonCamera)
+		public void Init(CinemachineVirtualCamera baseCamera)
 		{
-			_thirdPersonCamera = thirdPersonCamera;
-			_firstPersonCamera = firstPersonCamera;
+			_baseCamera = baseCamera;
+			
 			VirtualCameras = new CinemachineVirtualCamera[]
 			{
-				thirdPersonCamera, firstPersonCamera
+				baseCamera
 			};
+			
 			SetFollowTarget(_follow);
 			SetLookAtTarget(_lookAt);
 		}
 
 		public IReadOnlyList<CinemachineVirtualCamera> VirtualCameras { get; private set; } =
 			Array.Empty<CinemachineVirtualCamera>();
-
-		public CinemachineVirtualCamera GetThirdPersonVc()
-		{
-			return _thirdPersonCamera;
-		}
-
-		public CinemachineVirtualCamera GetFirstPersonVc()
-		{
-			return _firstPersonCamera;
-		}
+		
 
 		private void SetFollowTarget(Transform follow)
 		{
-			if (_thirdPersonCamera)
-				_thirdPersonCamera.Follow = follow;
-			if (_firstPersonCamera)
-				_firstPersonCamera.Follow = follow;
+			if (_baseCamera)
+				_baseCamera.Follow = follow;
 		}
 
 		private void SetLookAtTarget(Transform lookAt)
 		{
-			if (_thirdPersonCamera)
-				_thirdPersonCamera.LookAt = lookAt;
-			if (_firstPersonCamera)
-				_firstPersonCamera.LookAt = lookAt;
+			if (_baseCamera)
+				_baseCamera.LookAt = lookAt;
 		}
 
 		public void SetCamera(UnityEngine.Camera camera)
@@ -138,10 +94,6 @@ namespace Game.Models.Camera.Impl
 
 		public UnityEngine.Camera GetCamera() => _camera;
 
-		public Vector3 GetPlayerCameraDirection(Vector3 target)
-		{
-			return target - _camera.transform.position;
-		}
 
 		public Transform GetProjectilePlace => _projectilePlace;
 

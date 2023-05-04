@@ -3,8 +3,7 @@ using UnityEngine;
 
 namespace Ecs.Views.Linkable.Impl
 {
-	public class ObjectView : LinkableView, IPositionAddedListener, ILocalPositionAddedListener, IRotationAddedListener,
-		IVelocityAddedListener
+	public class ObjectView : LinkableView, IPositionAddedListener, ILocalPositionAddedListener, IRotationAddedListener
 	{
 		public override void Link(IEntity entity, IContext context)
 		{
@@ -13,7 +12,6 @@ namespace Ecs.Views.Linkable.Impl
 			e.AddPositionAddedListener(this);
 			e.AddLocalPositionAddedListener(this);
 			e.AddRotationAddedListener(this);
-			e.AddVelocityAddedListener(this);
 			e.AddTransform(transform);
 
 			if (e.HasLocalPosition)
@@ -35,13 +33,6 @@ namespace Ecs.Views.Linkable.Impl
 		public virtual void OnRotationAdded(GameEntity entity, Quaternion value)
 		{
 			transform.rotation = value;
-		}
-
-		public virtual void OnVelocityAdded(GameEntity entity, Vector3 value)
-		{
-			transform.position += value;
-			SetEntityPosition(entity);
-			SetEntityLocalPosition(entity);
 		}
 
 		public void OnLocalPositionAdded(GameEntity entity, Vector3 value)
